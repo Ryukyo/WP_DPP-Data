@@ -5,14 +5,18 @@ This script is a solution of Florian Fejer to the DPP data coding challenge
 ## Structure
 
 - filter.py contains the script with the main method
-- data.txt contains sample data and is the default file used by the filter script
+- data.txt contains sample data in the required format and is the default file used by the filter script
 - data2.txt is another file with sample data, which can be used to test the addition of a file path
 
 ## How to
 
 Tested on Ubuntu 20.04 and Windows 10 with Python 3.9
+Entries in the dataset require the format <unique record identifier><white_space><numeric value>
 
 ### Run the script
+
+The argument n passed to the main method indicates the n-largest values that should be output.
+n <= number of entries in the dataset (i.e. data.txt)
 
 Within the folder containing 'filter.py' run the following command:
 `python3 filter.py`
