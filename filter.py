@@ -2,6 +2,9 @@ import sys
 import os
 from operator import itemgetter
 
+# time complexity: O(n log n ) -> average quasilinear time for sorting the list
+# memory complexity: O(n) -> worst case of sorting
+
 
 def read_file(file):
     with open(file) as f:
@@ -38,21 +41,6 @@ def main(largest_values):
     #  Alternatively output the N-largest valid ids as a list
     # first_dataset_elements = [a_tuple[0] for a_tuple in data_sorted_by_value]
     # print(first_dataset_elements[:largest_values])
-
-    # largest_values_list = []
-    # for i in range(0, largest_values):
-    #     max_value = 0
-    #     for j in range(len(data_original)[:]):
-    #         split_element = data_original[j].split()
-    #         if int(split_element[1]) > max_value:
-    #             # print(int(split_element[1]))
-    #             index_to_remove = j
-    #             max_value = int(split_element[1])
-    #     print(data_original[index_to_remove])
-    #     while len(data_original) > 0:
-    #         data_original.remove(index_to_remove)
-    #     largest_values_list.append(split_element[0])
-    # print(largest_values_list)
 
 
 if __name__ == "__main__":
