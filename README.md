@@ -11,7 +11,7 @@ This script is a solution of Florian Fejer to the DPP data coding challenge
 ## How to
 
 Tested on Ubuntu 20.04 and Windows 10 with Python 3.9
-Entries in the dataset require the format <unique record identifier><white_space><numeric value>
+Entries in the dataset require the format `<unique record identifier><white_space><numeric value>`
 
 ### Run the script
 
@@ -19,9 +19,23 @@ The argument n passed to the main method indicates the n-largest values that sho
 n <= number of entries in the dataset (i.e. data.txt)
 
 Within the folder containing 'filter.py' run the following command:
-`python3 filter.py`
+`python filter.py`
 
 or to use a data file different from the default 'data.txt':
-`python3 filter.py {path/to/data}`
+`python filter.py {path/to/data}`
 
 ### Run the tests
+
+### Create test data
+
+Requires numpy installation
+
+Set the parameters in generate_data.py by adjusting:
+
+- n for the number of data entries
+- low_id for the smallest possible id
+- high_id for the biggest possible id
+- max_number for the largest possible number
+
+To generate test data in data2.txt, run the following command:
+`python generate_data.py`
