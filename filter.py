@@ -50,11 +50,12 @@ def min_loop(formatted_data, n_values, dataset_length):
     i = 0
     while i < dataset_length - n_values:
         i += 1
-        max_value = float("inf")
+        # min_value needs to be larger than the highest number in the dataset
+        min_value = float("inf")
         for j in range(len(formatted_data)):
-            if formatted_data[j][1] < max_value:
-                max_id, max_value = formatted_data[j]
-        formatted_data.remove((max_id, max_value))
+            if formatted_data[j][1] < min_value:
+                min_id, min_value = formatted_data[j]
+        formatted_data.remove((min_id, min_value))
     return [element[0] for element in formatted_data]
 
 
@@ -64,6 +65,9 @@ def main(largest_values):
     if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
         filepath = sys.argv[1]
     data_original = read_file(filepath)
+
+    if largest_values > len(data_original):
+        raise ValueError("Output larger than input dataset was requested")
 
     datasets_list = format_dataset(data_original)
     datasets_list_length = len(datasets_list)
@@ -78,28 +82,33 @@ def main(largest_values):
 
     if (input_larger_log_list_length) and (difference_larger_equal_log_list_length):
         # N > log (length of data) => sort the datasets in descending order of the 2nd value of each dataset
+        result = []
         data_sorted_by_value = sorted(datasets_list, key=itemgetter(1), reverse=True)
         # print("sort")
         # output the N-largest valid ids separately
         for unique_id in data_sorted_by_value[:largest_values]:
+            result.append(unique_id[0])
             print(unique_id[0])
 
         # Alternatively output the N-largest valid ids as a list
         # first_dataset_elements = [a_tuple[0] for a_tuple in data_sorted_by_value]
         #   print(first_dataset_elements[:largest_values])
+        return result
 
     if input_smaller_log_list_length:
         result = max_loop(datasets_list, largest_values)
         # print("max loop")
         for id in result:
             print(id)
+        return result
 
     if difference_smaller_log_list_length:
         result = min_loop(datasets_list, largest_values, datasets_list_length)
         # print("min loop")
         for id in result:
             print(id)
+        return result
 
 
 if __name__ == "__main__":
-    main(5)
+    main(1)
