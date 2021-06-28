@@ -6,7 +6,9 @@ This script is a solution of Florian Fejer to the DPP data coding challenge
 
 - filter.py contains the script with the main method
 - data.txt contains sample data in the required format and is the default file used by the filter script
-- data2.txt is another file with sample data, which can be used to test the addition of a file path
+- data_large.txt is another file with large sample data, which can be used to test the addition of a file path
+- generate_data.py generates customizable data sets
+- test_filter.py contains a script for unit testing filter.py
 
 ## How to
 
@@ -25,6 +27,9 @@ or to use a data file different from the default 'data.txt':
 `python filter.py {path/to/data}`
 
 ### Run the tests
+
+To execute the unit tests provided in test_filter.py, run the following command:
+`python test_filter.py`
 
 ### Create test data
 

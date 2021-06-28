@@ -74,7 +74,6 @@ class TestFilter(unittest.TestCase):
         self.assertCountEqual(calling_min_loop, self.sample_five_highest_ids)
         self.assertCountEqual(calling_sort, self.sample_three_highest_ids)
         self.assertCountEqual(returning_all_ids, self.sample_all_ids)
-        # also test with same highest number several times in dataset
         self.assertRaises(ValueError, filter.main, 7)
 
 
