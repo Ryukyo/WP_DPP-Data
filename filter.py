@@ -4,7 +4,7 @@ import math
 from operator import itemgetter
 
 # time complexity:
-# in simple words: sort and output the ids of largest numbers, unless it is faster to loop
+# in simple words: sort and output the ids of largest numbers, unless it is faster to loop only a few times
 # O(n log n ) -> average quasilinear time for sorting the list
 # O(n * number of requested ids) while n < log (length of data) or (length of data) - N < log (length of data)
 # memory complexity:
